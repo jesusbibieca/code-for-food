@@ -20,7 +20,7 @@ class Navbar extends Component {
 
     return (
       <nav
-        className="navbar is-fixed-top is-spaced"
+        className="navbar transparent"
         role="navigation"
         aria-label="main navigation"
       >
