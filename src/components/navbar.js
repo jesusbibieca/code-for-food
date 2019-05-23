@@ -12,7 +12,6 @@ class Navbar extends Component {
 
   toogle = () => {
     this.setState({ active: !this.state.active });
-    console.log('hey');
   };
 
   render() {
