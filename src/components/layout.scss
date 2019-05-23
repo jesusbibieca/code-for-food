@@ -6,7 +6,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin: 0 8px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -621,4 +621,8 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+.top-workaround {
+  padding-top: 90px;
 }
