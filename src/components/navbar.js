@@ -1,65 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import './navbar.scss';
 
-const Navbar = () => (
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-        <img
-          src="https://bulma.io/images/bulma-logo.png"
-          alt="site logo"
-          width="112"
-          height="28"
-        />
-      </a>
-    </div>
+import Burger from './burger';
 
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        <a href="/" class="navbar-item">
-          Home
-        </a>
+class Navbar extends Component {
+  state = {
+    active: false,
+  };
 
-        <a href="/" class="navbar-item">
-          Documentation
-        </a>
+  toogle = () => {
+    this.setState({ active: !this.state.active });
+    console.log('hey');
+  };
 
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a href="/" class="navbar-link">
-            More
-          </a>
+  render() {
+    const { title, links } = this.props;
+    const { active } = this.state;
 
-          <div class="navbar-dropdown">
-            <a href="/" class="navbar-item">
-              About
-            </a>
-            <a href="/" class="navbar-item">
-              Jobs
-            </a>
-            <a href="/" class="navbar-item">
-              Contact
-            </a>
-            <hr class="navbar-divider" />
-            <a href="/" class="navbar-item">
-              Report an issue
-            </a>
+    return (
+      <nav
+        className="navbar is-fixed-top is-spaced"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div className="navbar-brand">
+          <Link to="/" className="logo is-uppercase">
+            {title}
+          </Link>
+          <Burger onClick={this.toogle} isActive={active} />
+        </div>
+
+        <div className={`navbar-menu ${active ? 'is-active' : ''}`}>
+          <div className="navbar-end">
+            {links.map(link => (
+              <Link to={link.slug} className="navbar-item" key={link.name}>
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
-      </div>
+      </nav>
+    );
+  }
+}
 
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a href="/" class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a href="/" class="button is-light">
-              Log in
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-);
+Navbar.propTypes = {
+  title: PropTypes.string,
+  links: PropTypes.array.isRequired,
+};
+
+Navbar.defaultProps = {
+  title: ``,
+};
 
 export default Navbar;
