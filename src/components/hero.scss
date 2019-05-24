@@ -1,0 +1,14 @@
+.custom {
+  background: 
+    linear-gradient(
+      rgba(41, 38, 38, 0.75), 
+      rgba(41, 38, 38, 0.45)
+    ),
+    url('../images/camera-coffee-x1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 60px;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
+}
