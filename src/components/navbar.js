@@ -34,7 +34,11 @@ class Navbar extends Component {
         <div className={`navbar-menu ${active ? 'is-active' : ''}`}>
           <div className="navbar-end">
             {links.map(link => (
-              <Link to={link.slug} className="navbar-item has-text-white custom-link" key={link.name}>
+              <Link
+                to={link.slug}
+                className="navbar-item has-text-white custom-link"
+                key={link.name}
+              >
                 {link.name}
               </Link>
             ))}

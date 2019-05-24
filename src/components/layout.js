@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Location} from '@reach/router'
+import { Location } from '@reach/router';
 
 import Header from './header';
 import './layout.scss';
 
 const Layout = ({ children }) => (
   <Location>
-    {({location}) => (
+    {({ location }) => (
       <div className="is-fixed-top top-workaround">
         <Header path={location} />
         <div className="container">

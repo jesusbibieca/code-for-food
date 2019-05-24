@@ -13,11 +13,9 @@ import Img from 'gatsby-image';
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = ({ data}) => {
-  console.log(data)
-  return (
-  <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-)
+const Image = ({ data }) => {
+  console.log(data);
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
 
 export const query = graphql`
@@ -32,5 +30,5 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 export default Image;

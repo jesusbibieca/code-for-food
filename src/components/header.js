@@ -2,10 +2,10 @@ import { StaticQuery, graphql } from 'gatsby';
 import React from 'react';
 
 import Navbar from './navbar';
-import Hero from './hero'
+import Hero from './hero';
 import config from '../utils/config';
 
-const Header = ({path}) => (
+const Header = ({ path }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
