@@ -20,12 +20,12 @@ class Navbar extends Component {
 
     return (
       <nav
-        className="navbar is-fixed-top is-spaced"
+        className="navbar transparent navbar-margin"
         role="navigation"
         aria-label="main navigation"
       >
         <div className="navbar-brand">
-          <Link to="/" className="logo is-uppercase">
+          <Link to="/" className="logo is-uppercase custom-logo">
             {title}
           </Link>
           <Burger onClick={this.toogle} isActive={active} />
@@ -34,7 +34,11 @@ class Navbar extends Component {
         <div className={`navbar-menu ${active ? 'is-active' : ''}`}>
           <div className="navbar-end">
             {links.map(link => (
-              <Link to={link.slug} className="navbar-item" key={link.name}>
+              <Link
+                to={link.slug}
+                className="navbar-item white-text custom-link"
+                key={link.name}
+              >
                 {link.name}
               </Link>
             ))}

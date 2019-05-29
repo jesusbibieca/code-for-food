@@ -1,4 +1,47 @@
 .logo {
-  margin: 10px;
   font-size: 1.5rem;
+  margin: 10px;
+}
+.transparent {
+  background-color: transparent !important;
+}
+.custom-link {
+  &:hover {
+    background-color: rgba(200,200,200,0.35) !important;
+    color: #fff;
+  }
+}
+
+.custom-logo {
+  &:hover {
+    color: #fff;
+  }
+}
+
+.navbar-margin {
+  margin: 10px 16px 0;
+}
+
+.white-text {
+  color: #fff !important;
+}
+
+@media screen and (max-width: 1023px) {
+  .navbar-menu.is-active {
+    position: absolute;
+    width: 100%;
+  }
+  .custom-link {
+    color: #000 !important;
+  }
+  .navbar-end {
+    text-align: center;
+  }
+  .navbar-burger {
+    background-color: transparent;
+    color: #fff !important;
+  }
+  .navbar-burger:hover {
+    background-color: rgba(0, 0, 0, 0.35) !important;
+  }
 }
