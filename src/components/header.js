@@ -5,7 +5,7 @@ import Navbar from './navbar';
 import Hero from './hero';
 import config from '../utils/config';
 
-const Header = ({ path }) => (
+const Header = () => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
