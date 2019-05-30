@@ -10,6 +10,7 @@
 
     ```sh
     cd code-for-food/
+    npm install
     npm run dev
     ```
 
