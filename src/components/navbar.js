@@ -36,7 +36,7 @@ class Navbar extends Component {
             {links.map(link => (
               <Link
                 to={link.slug}
-                className="navbar-item white-text custom-link"
+                className="navbar-item white-text"
                 key={link.name}
               >
                 {link.name}
